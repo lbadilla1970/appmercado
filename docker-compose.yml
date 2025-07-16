@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  nicegui:
+    build: .
+    container_name: nicegui-app
+    ports:
+      - "8550:8080"
+    networks:
+      - automatiza-network
+    restart: unless-stopped
+
+networks:
+  automatiza-network:
+    external: true
